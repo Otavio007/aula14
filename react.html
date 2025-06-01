@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="raiz"></div>
+    <script crossorigin type="text/babel">
+        
+        import React, { useState } from 'react';
+        
+        function Contador() {
+        const [contagem, setContagem] = useState(0) // Estado para a contagem
+        // Função para incrementar a contagem
+        function handleIncremento() {
+            setContagem(contagem + 1); // Atualiza o estado
+        }
+
+        return (
+            <div>
+            <p>Contagem: {contagem}</p> 
+            <button onClick={handleIncremento}> 
+                Incrementar
+            </button>
+            </div>
+        ); 
+        }   
+        const elementoDoApp = document.getElementById("raiz")
+
+        const aplicacao = ReactDOM.createRoot(elementoDoApp)
+        aplicacao.render(<Contador />)
+    </script>
+</body>
+
+</html>
